@@ -1,9 +1,9 @@
 class ProductionConfig(object):
     """A basic production config
     """
-    TRYTON_DATABASE = '' #Change
-    SECRET_KEY = ''    #Change
-    SERVER_NAME = ""     #Set this
+    TRYTON_DATABASE = 'health30' #Change
+    SECRET_KEY = 'gnuhealth'    #Change
+    SERVER_NAME = "gnuhealthdb"     #Set this
 
     PREFERRED_URL_SCHEME='https'
     SESSION_COOKIE_SECURE = True
