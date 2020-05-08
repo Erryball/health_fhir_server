@@ -1,8 +1,8 @@
 from StringIO import StringIO
 from .datastore import find_record
 from operator import attrgetter
-import server.fhir as supermod
-from server.common import safe_attrgetter
+import fhir as supermod
+from common import safe_attrgetter
 from .health_mixin import ExportXMLMixin
 
 try:

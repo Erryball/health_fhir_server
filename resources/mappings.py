@@ -1,18 +1,18 @@
 from collections import namedtuple
-from server.common import tryton
-from server.health_fhir import health_Condition
-from server.health_fhir import health_DiagnosticReport
-from server.health_fhir import health_FamilyHistory
-from server.health_fhir import health_Immunization
-from server.health_fhir import health_MedicationStatement
-from server.health_fhir import health_Observation
-from server.health_fhir import health_Organization
-from server.health_fhir import health_Practitioner
-from server.health_fhir import health_Procedure
-from server.health_fhir import health_Medication
-from server.health_fhir import health_Patient
-from server.health_fhir import Bundle
-from server.health_fhir import health_Search
+from common import tryton
+from health_fhir import health_Condition
+from health_fhir import health_DiagnosticReport
+from health_fhir import health_FamilyHistory
+from health_fhir import health_Immunization
+from health_fhir import health_MedicationStatement
+from health_fhir import health_Observation
+from health_fhir import health_Organization
+from health_fhir import health_Practitioner
+from health_fhir import health_Procedure
+from health_fhir import health_Medication
+from health_fhir import health_Patient
+from health_fhir import Bundle
+from health_fhir import health_Search
 
 # Trying to keep consistent naming across all parts of the app
 #   Consequently, bring all the pieces together and pass that around

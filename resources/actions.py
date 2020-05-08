@@ -1,7 +1,7 @@
-from server.resources.mappings import mappings
-from server.common import get_userid, tryton
-from server.health_fhir.datastore import find_record
-from server.health_fhir import health_OperationOutcome as error
+from resources.mappings import mappings
+from common import get_userid, tryton
+from health_fhir.datastore import find_record
+from health_fhir import health_OperationOutcome as error
 import lxml
 import sys
 

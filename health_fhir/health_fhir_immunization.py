@@ -1,8 +1,8 @@
 from StringIO import StringIO
 from operator import attrgetter
 from .datastore import find_record
-import server.fhir as supermod
-from server.common import safe_attrgetter
+import fhir as supermod
+from common import safe_attrgetter
 from .health_mixin import ExportXMLMixin
 
 # URL values
@@ -256,7 +256,7 @@ class health_Immunization(supermod.Immunization, Immunization_Map, ExportXMLMixi
         route -- how vaccine entered body
         """
 
-        from server.fhir.value_sets import immunizationRoute
+        from fhir.value_sets import immunizationRoute
         if route:
             ir=[i for i in immunizationRoute.contents if i['code'] == route.upper()]
             if ir:
@@ -274,7 +274,7 @@ class health_Immunization(supermod.Immunization, Immunization_Map, ExportXMLMixi
         site -- site code where the vaccine was administered
         """
 
-        from server.fhir.value_sets import immunizationSite
+        from fhir.value_sets import immunizationSite
         if site:
             m=[i for i in immunizationSite.contents if i['code'] == site.upper()]
             if m:

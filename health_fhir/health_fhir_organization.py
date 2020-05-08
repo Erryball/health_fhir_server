@@ -1,9 +1,9 @@
 from StringIO import StringIO
 from operator import attrgetter
 from .datastore import find_record
-from server.common import safe_attrgetter
+from common import safe_attrgetter
 from. health_mixin import ExportXMLMixin
-import server.fhir as supermod
+import fhir as supermod
 import sys
 
 try:

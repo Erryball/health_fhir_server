@@ -1,9 +1,9 @@
 from StringIO import StringIO
 from operator import attrgetter
 from .datastore import find_record
-from server.common import safe_attrgetter
+from common import safe_attrgetter
 from .health_mixin import ExportXMLMixin
-import server.fhir as supermod
+import fhir as supermod
 import sys
 
 try:
@@ -156,7 +156,7 @@ class health_Practitioner(supermod.Practitioner, Practitioner_Map, ExportXMLMixi
         """
 
         if gender:
-            from server.fhir.value_sets import administrativeGender as codes
+            from fhir.value_sets import administrativeGender as codes
             us = gender.upper()
             sd = [x for x in codes.contents if x['code'] == us][0]
             coding = supermod.Coding(

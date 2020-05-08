@@ -9,7 +9,7 @@ from .health_fhir_medication import Medication_Map
 from .health_fhir_medication_statement import MedicationStatement_Map 
 from .health_fhir_immunization import Immunization_Map 
 from .health_fhir_organization import Organization_Map 
-from server.common import safe_attrgetter
+from common import safe_attrgetter
 import re
 
 # TODO: Add support for :missing modifier

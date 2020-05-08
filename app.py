@@ -1,6 +1,6 @@
 from flask import Flask, g
 from flask_login import current_user
-from server.common import tryton, login_manager, Api, recordConverter
+from common import tryton, login_manager, Api, recordConverter
 
 def before_request():
     """Allows access to user object
@@ -10,7 +10,7 @@ def before_request():
 
 def create_app(config=None):
     app = Flask(__name__)
-    app.config.from_object('server.config.DebugConfig')
+    app.config.from_object('config.DebugConfig')
     if config is not None:
         app.config.from_object(config)
     app.config.from_envvar('FHIR_SERVER_CONFIG', silent=True)
@@ -46,7 +46,7 @@ def create_app(config=None):
         app.before_request(before_request)
 
         #### ADD THE ROUTES ####
-        from server.resources.system import Conformance
+        from resources.system import Conformance
         api.add_resource(Conformance, '/', '/metadata')
 
         def add_fhir_routes(resource):
@@ -55,42 +55,42 @@ def create_app(config=None):
             for _, route in resource.routing_table.items():
                 api.add_resource(route['handler'], *route['uri'])
 
-        from server.resources.patient import routing as pat
+        from resources.patient import routing as pat
         add_fhir_routes(pat)
 
-        from server.resources.diagnostic_report import routing as dr
+        from resources.diagnostic_report import routing as dr
         add_fhir_routes(dr)
 
-        from server.resources.observation import routing as obs
+        from resources.observation import routing as obs
         add_fhir_routes(obs)
 
-        from server.resources.practitioner import routing as hp
+        from resources.practitioner import routing as hp
         add_fhir_routes(hp)
 
-        from server.resources.procedure import routing as op
+        from resources.procedure import routing as op
         add_fhir_routes(op)
 
-        from server.resources.condition import routing as condition
+        from resources.condition import routing as condition
         add_fhir_routes(condition)
 
-        from server.resources.family_history import routing as fh
+        from resources.family_history import routing as fh
         add_fhir_routes(fh)
 
-        from server.resources.medication import routing as med
+        from resources.medication import routing as med
         add_fhir_routes(med)
 
-        from server.resources.medication_statement import routing as ms
+        from resources.medication_statement import routing as ms
         add_fhir_routes(ms)
 
-        from server.resources.immunization import routing as imm
+        from resources.immunization import routing as imm
         add_fhir_routes(imm)
 
-        from server.resources.organization import routing as org
+        from resources.organization import routing as org
         add_fhir_routes(org)
 
         # Handle the authentication blueprint
         #   TODO: Use OAuth or something robust
-        from server.resources.auth import auth_endpoint
+        from resources.auth import auth_endpoint
         app.register_blueprint(auth_endpoint, url_prefix='/auth')
 
     return app

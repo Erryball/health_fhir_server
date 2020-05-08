@@ -12,7 +12,7 @@ from .health_fhir_medication_statement import MedicationStatement_Map
 from .health_fhir_immunization import Immunization_Map
 from .health_fhir_organization import Organization_Map
 from .health_mixin import ExportXMLMixin
-import server.fhir as supermod
+import fhir as supermod
 
 UPDATED=datetime(2015, 7, 3).strftime('%Y/%m/%d')
 
@@ -82,7 +82,7 @@ class health_Conformance(supermod.Conformance, ExportXMLMixin):
 
     def __set_rest(self):
         r = supermod.Conformance_Rest()
-        r.mode = supermod.RestfulConformanceMode(value='server')
+        r.mode = supermod.RestfulConformanceMode(value=')
         endpoints = []
         for endpoint, mapping in [('Patient', self.patient),
                             ('DiagnosticReport', self.diagnostic_report),

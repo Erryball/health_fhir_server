@@ -1,9 +1,9 @@
 from flask import request
-from server.common import Resource
-from server.resources import SearchRecords
-from server.resources import ReadRecord
-from server.resources import ValidateRecord
-from server.resources import Routing
+from common import Resource
+from resources import SearchRecords
+from resources import ReadRecord
+from resources import ValidateRecord
+from resources import Routing
 
 class IM_Create(Resource):
     def post(self):

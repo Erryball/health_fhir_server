@@ -1,6 +1,6 @@
 from StringIO import StringIO
 from datetime import datetime
-import server.fhir as supermod
+import fhir as supermod
 from .health_mixin import ExportXMLMixin
 
 # Sub-class OperationOutcome

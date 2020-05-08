@@ -1,7 +1,7 @@
 from StringIO import StringIO
 from operator import attrgetter
-from server.common import safe_attrgetter
-import server.fhir as supermod
+from common import safe_attrgetter
+import fhir as supermod
 from .health_mixin import ExportXMLMixin
 
 try:

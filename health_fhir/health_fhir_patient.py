@@ -2,9 +2,9 @@ from operator import attrgetter
 from StringIO import StringIO
 from datetime import datetime
 from .datastore import find_record
-import server.fhir as supermod
+import fhir as supermod
 from .health_mixin import ExportXMLMixin
-from server.common import get_address, safe_attrgetter
+from common import get_address, safe_attrgetter
 import sys
 
 try:
@@ -402,7 +402,7 @@ class health_Patient(supermod.Patient, Patient_Map, ExportXMLMixin):
         gender -- gender code
         """
 
-        from server.fhir.value_sets import administrativeGender as gender_codes
+        from fhir.value_sets import administrativeGender as gender_codes
         if gender:
             us = gender.upper() #Standard requires uppercase
             try:
@@ -681,7 +681,7 @@ class health_Patient(supermod.Patient, Patient_Map, ExportXMLMixin):
         marital_status --  marital status code
         """
 
-        from server.fhir.value_sets import maritalStatus as ms
+        from fhir.value_sets import maritalStatus as ms
         #Health has concubinage and separated, which aren't truly
         # matching to the FHIR defined statuses
         if marital_status:

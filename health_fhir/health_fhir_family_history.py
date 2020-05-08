@@ -1,7 +1,7 @@
 from StringIO import StringIO
 from operator import attrgetter
-import server.fhir as supermod
-from server.common import safe_attrgetter
+import fhir as supermod
+from common import safe_attrgetter
 from .health_mixin import ExportXMLMixin
 
 try:
@@ -131,7 +131,7 @@ class health_FamilyHistory(supermod.FamilyHistory, FamilyHistory_Map, ExportXMLM
         """
 
         # TODO Combine multiple conditions for same person
-        from server.fhir.value_sets import familyMember
+        from fhir.value_sets import familyMember
         for member in familyHistory:
             rel = supermod.FamilyHistory_Relation()
             rel.relationship = supermod.CodeableConcept()

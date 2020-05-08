@@ -3,8 +3,8 @@ from operator import attrgetter
 from datetime import datetime
 from .datastore import find_record
 from .health_mixin import ExportXMLMixin
-import server.fhir as supermod
-from server.common import safe_attrgetter
+import fhir as supermod
+from common import safe_attrgetter
 
 try:
     from flask import url_for
