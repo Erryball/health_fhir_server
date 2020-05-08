@@ -82,7 +82,7 @@ class health_Conformance(supermod.Conformance, ExportXMLMixin):
 
     def __set_rest(self):
         r = supermod.Conformance_Rest()
-        r.mode = supermod.RestfulConformanceMode(value=')
+        r.mode = supermod.RestfulConformanceMode(value='server')
         endpoints = []
         for endpoint, mapping in [('Patient', self.patient),
                             ('DiagnosticReport', self.diagnostic_report),

@@ -1,4 +1,4 @@
-import server.fhir as supermod
+import fhir as supermod
 from .health_fhir_patient import *
 from .health_fhir_atom import *
 from .health_fhir_search import health_Search

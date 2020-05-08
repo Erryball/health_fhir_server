@@ -1,8 +1,8 @@
 from StringIO import StringIO
 from operator import attrgetter
-import server.fhir as supermod
+import fhir as supermod
 from .health_mixin import ExportXMLMixin
-from server.common import safe_attrgetter
+from common import safe_attrgetter
 
 try:
     from flask import url_for

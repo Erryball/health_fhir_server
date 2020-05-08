@@ -2,7 +2,7 @@ from math import ceil
 from werkzeug.urls import Href, url_quote
 from datetime import datetime
 from StringIO import StringIO
-import server.fhir as supermod
+import fhir as supermod
 
 class Bundle(supermod.FeedType):
     """A bundle is an atom feed
