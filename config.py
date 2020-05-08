@@ -3,7 +3,7 @@ class ProductionConfig(object):
     """
     TRYTON_DATABASE = 'health30' #Change
     SECRET_KEY = 'gnuhealth'    #Change
-    SERVER_NAME = "gnuhealthdb"     #Set this
+    SERVER_NAME = "localhost.localdomain:5000"     #Set this
     TRYTON_CONFIG = '/etc/tryton/trytond.conf'
 
     PREFERRED_URL_SCHEME='https'
