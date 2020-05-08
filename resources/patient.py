@@ -1,10 +1,10 @@
 from flask import request
-from server.common import Resource
-from server.resources import SearchRecords
-from server.resources import ReadRecord
-from server.resources import ValidateRecord
-from server.resources import Routing
-#from server.common import tryton
+from common import Resource
+from resources import SearchRecords
+from resources import ReadRecord
+from resources import ValidateRecord
+from resources import Routing
+#from common import tryton
 
 # Extra patient models
 #party = tryton.pool.get('party.party')
