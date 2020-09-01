@@ -304,7 +304,7 @@ class health_Patient(supermod.Patient, Patient_Map, ExportXMLMixin):
             family=[]
             full_given_name = name.name
             full_family_name = name.lastname
-            nickname = name.alias
+            '''nickname = name.alias'''
             given=[supermod.string(value=x) for x in full_given_name.split()]
             after_names=[supermod.string(value=x) for x in full_family_name.split()]
             if len(after_names) > 1:
@@ -316,10 +316,12 @@ class health_Patient(supermod.Patient, Patient_Map, ExportXMLMixin):
                         use=supermod.NameUse(value='usual'),
                         family=family,
                         given=given))
-            if nickname:
+
+            ''' DEVICEAPI - DISABLED! '''
+            '''if nickname:
                 names.append(supermod.HumanName(
                             use=supermod.NameUse(value='nickname'),
-                            given=[supermod.string(value=nickname)]))
+                            given=[supermod.string(value=nickname)]))'''
 
             super(health_Patient, self).set_name(names)
 

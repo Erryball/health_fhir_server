@@ -4,6 +4,7 @@ from health_fhir.datastore import find_record
 from health_fhir import health_OperationOutcome as error
 import lxml
 import sys
+import traceback
 
 class SearchRecords:
     
@@ -75,6 +76,7 @@ class ReadRecord:
                 #TODO LOG IT
                 oo=error()
                 oo.add_issue(details='Invalid record', severity='error')
+                traceback.print_exc()
                 return oo, 404
         else:
             #TODO LOG
